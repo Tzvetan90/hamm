@@ -1,0 +1,17 @@
+# -*- coding: utf-8 -*-
+"""
+Created on Tue Jul 07 16:13:54 2015
+
+@author: Stefano
+"""
+
+def dh(s,t):
+    DH=0
+    for i in zip(s,t):
+        if i[0]!=i[1]:
+            DH+=1
+    return DH
+
+with open('rosalind_hamm.txt','r') as inp:
+    with open('outputhamm.txt','w') as out:
+        out.write(str(dh(inp.readline().strip(),inp.readline().strip())))
